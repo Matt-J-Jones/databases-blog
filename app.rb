@@ -10,7 +10,9 @@ class Application
   end
 
   def run
-    output = @post_repository.find_with_comments(3)
+    print "Enter number of post to display: "
+    choice = gets.chomp!
+    output = @post_repository.find_with_comments(choice.to_i)
 
     puts "Post title: #{output.title}"
     puts "Post body: #{output.content}"
